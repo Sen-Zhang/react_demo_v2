@@ -146,6 +146,10 @@
   });
 
   var ToDoHeader = React.createClass({
+    propTypes: {
+      addToDoItem: React.PropTypes.func.isRequired
+    },
+
     shouldComponentUpdate: function (nextProps, nextState) {
       return false;
     },
@@ -173,6 +177,14 @@
   });
 
   var ToDoMain = React.createClass({
+    propTypes: {
+      items: React.PropTypes.array.isRequired,
+      toggleAll: React.PropTypes.func.isRequired,
+      toggleItem: React.PropTypes.func.isRequired,
+      updateItem: React.PropTypes.func.isRequired,
+      removeItem: React.PropTypes.func.isRequired
+    },
+
     getDefaultProps: function () {
       return {
         items: []
@@ -214,6 +226,14 @@
   });
 
   var ToDoItem = React.createClass({
+    propTypes: {
+      key: React.PropTypes.number.isRequired,
+      item: React.PropTypes.object.isRequired,
+      toggleItem: React.PropTypes.func.isRequired,
+      updateItem: React.PropTypes.func.isRequired,
+      removeItem: React.PropTypes.func.isRequired
+    },
+
     getInitialState: function () {
       return {edit: false}
     },
@@ -257,6 +277,14 @@
   });
 
   var ToDoFooter = React.createClass({
+    propTypes: {
+      category: React.PropTypes.string.isRequired,
+      activeCount: React.PropTypes.number.isRequired,
+      completedCount: React.PropTypes.number.isRequired,
+      toggleCategory: React.PropTypes.func.isRequired,
+      clearCompleted: React.PropTypes.func.isRequired
+    },
+
     shouldComponentUpdate: function (nextProps, nextState) {
       return this.props !== nextProps;
     },

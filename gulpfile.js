@@ -25,9 +25,7 @@ var paths = {
 
 gulp.task('babel', function () {
   gulp.src('src/js/components.js')
-    .pipe(babel({
-      presets: ['es2015', 'react']
-    }))
+    .pipe(babel({presets: ['es2015', 'react']}))
     .pipe(gulp.dest('dist'));
 });
 
