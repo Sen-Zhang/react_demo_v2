@@ -1,0 +1,8 @@
+{
+  "name": "react_demo_v2",
+  "version": "1.0.0",
+  "dependencies": {
+    "react": "~0.14.0",
+    "bootstrap": "~3.3.0"
+  }
+}

@@ -1,0 +1,21 @@
+.item-completed {
+  color: #999;
+  text-decoration: line-through;
+  font-weight: bolder;
+}
+
+.item-incompleted {
+  font-weight: bolder;
+}
+
+.item-left {
+  padding-top: 3px;
+}
+
+.nav > li > a {
+  padding: 3px 5px;
+}
+
+.active-category {
+  font-weight: bolder;
+}
