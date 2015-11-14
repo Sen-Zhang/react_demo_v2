@@ -4,7 +4,6 @@ var gulp      = require('gulp'),
     connect   = require('gulp-connect'),
     minifyCSS = require('gulp-minify-css'),
     open      = require('gulp-open'),
-    uglify    = require('gulp-uglify'),
     watch     = require('gulp-watch');
 
 var options = {
@@ -29,13 +28,6 @@ gulp.task('babel', function () {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('uglify', ['babel'], function () {
-  return gulp.src(paths.jsFiles)
-    .pipe(uglify())
-    .pipe(concat('app.js'))
-    .pipe(gulp.dest('dist'));
-});
-
 gulp.task('minifyCSS', function () {
   gulp.src(paths.cssFiles)
     .pipe(minifyCSS())
@@ -57,8 +49,8 @@ gulp.task('open', function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('src/js/components.js', ['babel', 'uglify']);
+  gulp.watch('src/js/components.js', ['babel']);
   gulp.watch('src/css/app.css', ['minifyCSS']);
 });
 
-gulp.task('default', ['babel', 'uglify', 'minifyCSS', 'connect', 'open', 'watch']);
+gulp.task('default', ['babel', 'minifyCSS', 'connect', 'open', 'watch']);
